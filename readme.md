@@ -21,3 +21,11 @@ lister les restaurants et d'obtenir les horaires du restaurant grâce à leur id
 ### Affichage des données des restaurants
 J'ai fini par créer les vues qui afficheront les données des restaurants, en parcourant les horaires des restaurants envoyés depuis
 le controller (via une reliation ManyToOne entre le modèles horaires et restaurant).
+
+###Configuration pour lancer le projet
+```
+composer install
+php artisan key:generate
+php artisan serve
+http://127.0.0.1:8000/restaurants //liste des restaurants
+```
