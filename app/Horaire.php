@@ -4,14 +4,14 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Restaurant extends Model
+class Horaire extends Model
 {
     /**
      * The table associated with the model.
      *
      * @var string
      */
-    protected $table = 'restaurants';
+    protected $table = 'horaires';
 
     public $incrementing = false;
 
@@ -20,12 +20,13 @@ class Restaurant extends Model
      *
      * @var array
      */
-    protected $fillable = ['name'];
+    protected $fillable = ['Jour', 'Crénaux'];
 
-    // accès aux horaires du restaurant via son id
-    public function horaires()
+    // accès au restaurant depuis ces horaires
+    public function restaurant()
     {
-        return $this->hasMany('App\Horaire', 'restaurants_id');
+        return $this->belongsTo('App\Restaurant', 'restaurants_id');
     }
+
 
 }
